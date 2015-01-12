@@ -1,24 +1,36 @@
-
 .front{
 	position: absolute;
-	opacity: 0;
 	backface-visibility: hidden;
-	
+	transition: 1s;
 }
 	
 	
 .back {
 	position: static;
-	opacity: 1;
-	
-}
-
-.portfolio-item:hover {
-	position: relative;
+	transform: rotateY(-180deg);
+	backface-visibility: hidden;
 	transition: 1s;
-	transform: rotateY(180deg);
-
 }
+
+.portfolio-item {
+	perspective: 800px;
+	transform-style: preserve-3d;
+}
+
+.portfolio-item:hover .front {
+	/*opacity: 0;*/
+	transform: rotateY(180deg);
+}
+
+.portfolio-item:hover .back {
+	/*opacity: 1;*/
+	transform: rotateY(0deg);
+}
+
+
+
+
+
 
 
  
